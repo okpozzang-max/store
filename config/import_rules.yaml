@@ -1,0 +1,32 @@
+# Import / shipping risk rules (PRD 8.4 "필수 규제와 수입 제한 확인").
+#
+# Rules attach WARNING tags to products. They are reminders to check, not
+# legal determinations: requirements depend on the exact item, HS code and
+# current regulations. Edit freely; a rule matches when ANY keyword appears in
+# the product name / brand / variant (case-insensitive) or the category is listed.
+
+rules:
+  - tag: battery
+    label: 리튬 배터리 포함 의심 — 항공 위험물·배송대행지 접수 제한 확인
+    keywords: [battery, power bank, powercore, 보조배터리, 배터리, switch, 무선]
+    categories: []
+  - tag: kc_electric
+    label: 전기용품 — KC 안전인증 대상 여부 확인
+    keywords: [charger, 충전기, dryer, 드라이기, airwrap, 고데기, hair, powercore, power bank]
+    categories: [electronics]
+  - tag: radio_cert
+    label: 무선기기 — 전파인증 대상 여부 확인
+    keywords: [bluetooth, wireless, wifi, switch, 블루투스]
+    categories: [gaming]
+  - tag: food_contact
+    label: 식품 접촉 용기 — 식품 수입 관련 요건 확인
+    keywords: [tumbler, quencher, bottle, 텀블러, 보온병, 컵]
+    categories: [kitchen]
+  - tag: cosmetic
+    label: 화장품 — 수입 판매 요건 확인
+    keywords: [cream, serum, lotion, 크림, 세럼, 화장품]
+    categories: [cosmetics]
+  - tag: brand_ip
+    label: 유명 브랜드 — 상표권·병행수입 가능 여부 확인
+    keywords: [dyson, nintendo, lego, stanley, apple, sony]
+    categories: []

@@ -1,0 +1,6 @@
+product_ref,supplier_name,supplier_country,product_url,foreign_price,currency,availability_status,shipping_cost,shipping_currency,price_checked_at,match_confidence,verification_status,lead_time_days
+A1263,Amazon US,US,https://example.com/anker,21.99,USD,in_stock,5.00,USD,2026-10-10T09:00:00,0.95,verified,9
+10-10827,Stanley US,US,https://example.com/stanley,25.00,USD,in_stock,0,USD,2026-10-11T09:00:00,0.90,verified,8
+10311,Lego DE,DE,https://example.com/lego,29.99,EUR,in_stock,6.50,EUR,2026-10-12T09:00:00,0.98,verified,18
+HS05,Dyson UK,GB,https://example.com/dyson,399.00,GBP,in_stock,12.00,GBP,2026-10-13T09:00:00,0.85,unverified,10
+HEG-001,Rakuten JP,JP,https://example.com/switch,34800,JPY,in_stock,1500,JPY,2026-10-14T09:00:00,0.92,verified,7

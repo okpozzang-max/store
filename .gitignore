@@ -1,0 +1,32 @@
+# Secrets / environment
+.env
+*.env
+!.env.example
+
+# Database & data artifacts
+data/*.db
+data/*.sqlite
+data/*.sqlite3
+exports/*.csv
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.pytest_tmp/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log

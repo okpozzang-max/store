@@ -1,0 +1,19 @@
+# Overseas Demand Radar - Phase 1 (Analysis Engine) dependencies
+# Versions chosen for Python 3.14 wheel availability.
+# NOTE: The analysis engine itself uses only the standard library; pandas is
+# used by the Streamlit UI layer. If a wheel is unavailable for your Python,
+# the core pipeline and tests still run without pandas.
+
+streamlit>=1.40,<2.0
+pandas>=3.0.0            # cp314 wheels available from 3.0.0
+pydantic>=2.11,<3.0     # cp314 wheels from pydantic-core 2.x
+PyYAML>=6.0.2
+python-dotenv>=1.0.1
+
+# Testing
+pytest>=8.3.4
+
+# Reserved for later phases (HTTP / browser automation / scheduling).
+# httpx
+# playwright
+# APScheduler

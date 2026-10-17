@@ -1,0 +1,6 @@
+product_ref,seller_name,product_url,price_krw,shipping_cost_krw,product_condition,match_confidence,price_checked_at
+A1263,쿠팡,https://example.co.kr/anker,49000,0,new,0.95,2026-10-15T09:00:00
+10-10827,네이버쇼핑,https://example.co.kr/stanley,78000,3000,new,0.90,2026-10-15T09:00:00
+10311,레고공식,https://example.co.kr/lego,99000,0,new,0.97,2026-10-15T09:00:00
+HS05,다이슨공식,https://example.co.kr/dyson,750000,0,new,0.88,2026-10-15T09:00:00
+HEG-001,네이버쇼핑,https://example.co.kr/switch,415000,0,new,0.93,2026-10-15T09:00:00

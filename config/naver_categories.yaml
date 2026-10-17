@@ -1,0 +1,12 @@
+# Naver Shopping Insight category codes, per product category (products.csv `category`).
+#
+# Shopping Insight keyword trends REQUIRE a Naver Shopping category code. Find it
+# in the `cat_id` URL parameter after choosing a category on https://shopping.naver.com
+# (per the official API docs). Only add codes you have checked yourself.
+# Products whose category has no code here are skipped for Shopping Insight.
+#
+# Examples of top-level codes shown in the official documentation:
+#   50000000 = 패션의류, 50000002 = 화장품/미용
+#
+# beauty: "50000002"
+categories: {}

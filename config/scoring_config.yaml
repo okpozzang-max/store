@@ -1,0 +1,79 @@
+# Scoring configuration for Overseas Demand Radar.
+# All weights must sum to 1.0. These are INITIAL hypotheses (PRD section 7.1)
+# and are expected to be tuned once real sales results are collected.
+
+weights:
+  demand: 0.30        # 수요 수준
+  growth: 0.20        # 수요 성장률
+  price: 0.20         # 가격 경쟁력
+  margin: 0.20        # 예상 마진
+  competition: 0.10   # 경쟁 강도
+
+# Normalization reference points (used to map raw values onto a 0..100 scale).
+normalization:
+  # demand_index is already provider-normalized to roughly 0..100 per source.
+  demand_index_max: 100.0
+  # growth_pct mapped so that this value (or above) yields a full score of 100.
+  growth_pct_full_score: 50.0
+  # Price opportunity: ratio of (domestic_price - landed_cost) / domestic_price.
+  # A gap ratio >= this value yields a full price score.
+  price_gap_full_score: 0.50
+  # Margin: net margin pct that yields a full margin score.
+  margin_pct_full_score: 40.0
+  # Competition: fewer domestic sellers => higher score. At/above this seller
+  # count the competition score bottoms out at 0.
+  competition_sellers_max: 20
+
+# Business defaults.
+business:
+  target_margin_pct: 20.0
+  # Offers whose supplier trust score is below this are excluded from price
+  # comparison (PRD 9.4: never recommend a supplier just because it is cheapest).
+  min_supplier_trust: 40
+  # Supplier lead time (days) above which a "long delivery" risk is flagged.
+  max_lead_time_days: 14
+
+# Sales channels: fee charged on the sale price. These are ASSUMPTIONS — check
+# your actual contract / category fee and edit. Selected in the app sidebar.
+sales_channels:
+  default: smartstore
+  smartstore: {label: 스마트스토어, fee_pct: 0.06}
+  coupang: {label: 쿠팡, fee_pct: 0.11}
+  other: {label: 기타/자사몰, fee_pct: 0.10}
+
+# Cost ASSUMPTIONS. Every value used is shown in each candidate's cost basis
+# and marked "추정" where it was not provided per product/offer.
+costs:
+  # Overseas card payment fee and FX buffer apply to the amount actually paid
+  # abroad (item + seller shipping), not to KRW-side costs.
+  overseas_card_fee_pct: 0.025
+  fx_buffer_pct: 0.03
+  # Return / CS allowance as a share of the sale price (overseas returns are
+  # usually a near-total loss).
+  return_allowance_pct: 0.03
+  packaging_krw: 1000
+  # International shipping via a forwarding service, estimated as
+  # max(weight, min_weight) x rate. Rates per supplier country; edit to your
+  # forwarder's price list.
+  forwarding:
+    min_weight_kg: 1.0
+    rate_krw_per_kg: {US: 12000, JP: 8000, CN: 7000, EU: 15000, GB: 15000, default: 15000}
+    # Weight used when products.csv has no weight_kg (conservative guesses).
+    default_weight_kg_by_category: {electronics: 0.8, kitchen: 1.0, toys: 1.2, beauty: 1.5, gaming: 1.5}
+    default_weight_kg: 2.0
+  # Personal-import duty/VAT ESTIMATE. Commonly cited thresholds, which can
+  # change and depend on item and shipping method — not a customs ruling.
+  customs:
+    duty_free_usd_general: 150
+    duty_free_usd_us: 200        # US-shipped goods (KORUS FTA list clearance)
+    vat_pct: 0.10
+    default_duty_rate: 0.08
+    duty_rate_by_category: {}    # e.g. {electronics: 0.0} once you've checked HS codes
+
+# Confidence levels (PRD section 7.7). A high total score with low confidence
+# must NOT be auto-promoted to top sourcing priority.
+confidence_levels:
+  - verified
+  - partially_verified
+  - unverified
+  - insufficient_data

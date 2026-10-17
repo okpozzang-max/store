@@ -1,0 +1,6 @@
+keyword,category,country,observed_at,period_start,period_end,demand_index,growth_pct,signal_type,confidence,raw_reference
+스탠리 텀블러,kitchen,KR,2026-10-15T00:00:00,2026-09-15T00:00:00,2026-10-15T00:00:00,88,42.0,search_interest,unverified,sample
+앤커 보조배터리,electronics,KR,2026-10-15T00:00:00,2026-09-15T00:00:00,2026-10-15T00:00:00,65,10.0,search_interest,unverified,sample
+레고 난초,toys,KR,2026-10-15T00:00:00,2026-09-15T00:00:00,2026-10-15T00:00:00,54,-5.0,search_interest,unverified,sample
+다이슨 에어랩,beauty,KR,2026-10-15T00:00:00,2026-09-15T00:00:00,2026-10-15T00:00:00,92,18.0,shopping_interest,partially_verified,sample
+닌텐도 스위치,gaming,KR,2026-10-15T00:00:00,2026-09-15T00:00:00,2026-10-15T00:00:00,70,3.0,search_interest,unverified,sample
